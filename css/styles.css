@@ -126,6 +126,7 @@ body {
     align-self: flex-start;
     text-align: left;
     line-height: 2rem;
+    padding: 0 1.2rem;
 }
 
 .card__img {
@@ -133,7 +134,7 @@ body {
     padding: 1.2rem;
 }
 
-.card__img img {
+.card__imagen {
     width: 100%;
     border-radius: 1rem;
 }
@@ -309,4 +310,3 @@ body {
         padding: 1.2rem;
     }
 }
-
