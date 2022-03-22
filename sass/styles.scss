@@ -1,0 +1,295 @@
+$primary: #fff;
+
+@mixin space($gap, $padding) {
+    gap: $gap;
+    padding: $padding;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to right top, #121212, #1c1c1d, #262627, #313032, #3c3a3d, #3e3c3f, #403d41, #423f43, #3b383d, #353136, #2e2b30, #28242a);
+}
+
+.contenedor {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+    gap: 1rem;
+    min-height: 100vh;
+}
+
+
+/** header styles */
+
+    /** all */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "logo"
+                         "nav";
+    justify-content: center;
+    align-items: center;
+    @include space(0.5rem, 0.5rem);
+    backdrop-filter: blur(10px) brightness(0.8);
+}
+
+.logo {
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    min-width: 184px;
+    max-width: 60%;
+}
+
+    /** modificacion bootstrap  */
+
+.navbar-light .navbar-toggler {
+    color: $primary;
+    border-color: $primary;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: $primary;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $primary;
+}
+
+/** main styles */
+
+    /** all */
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: repeat(auto, 1fr);
+    @include space(1rem, 1.2rem);
+    margin-left: auto;
+    margin-right: auto;
+    color: $primary;
+}
+
+.tarjeta {
+    display: grid;
+    grid-template-rows: repeat(auto, auto);
+    grid-template-areas: "tarjeta__title"
+                         "tarjeta__img"
+                         "tarjeta__text";
+    justify-content: center;
+    align-items: center;
+    @include space(0.5rem, 1.2rem);
+    background-image: linear-gradient(to right bottom, #1e1e1f, #27283b, #313258, #3a3c77, #464696, #4b49a5, #514cb5, #574fc4, #554cc7, #534ac9, #5047cc, #4e44ce);
+    border-radius: 1rem;
+}
+
+.tarjeta__title {
+    grid-area: tarjeta__title;
+    align-self: flex-end;
+    text-align: center;
+}
+
+.tarjeta__title-h1 {
+    grid-area: tarjeta__title-h1;
+    text-align: center;
+}
+
+.tarjeta__title-h2 {
+    grid-area: tarjeta__title-h2;
+}
+
+.tarjeta__p {
+    grid-area: tarjeta__p;
+}
+
+.tarjeta__text {
+    grid-area: tarjeta__text;
+    align-self: flex-start;
+    text-align: left;
+    line-height: 2rem;
+    padding: 0 1.2rem;
+}
+
+.tarjeta__img {
+    grid-area: tarjeta__img;
+    padding: 1.2rem;
+}
+
+.tarjeta__imagen {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+    /** security */
+
+.tarjeta-security {
+    grid-template-rows: 0.25fr auto;
+    grid-template-areas: "tarjeta__title-h2"
+                         "tarjeta__p";
+}
+
+/** footer styles */
+
+    /** all */
+
+.footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "footer__logo"
+                         "footer__title"
+                         "footer__nav"
+                         "footer__text";
+    justify-content: center;
+    align-items: center;
+    @include space(0.5rem, 0.5rem);
+    color: $primary;
+}
+
+.footer__logo {
+    grid-area: footer__logo;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__logo img {
+    min-width: 184px;
+    max-width: 60%;
+}
+
+.footer__title {
+    grid-area: footer__title;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.footer__title h3 {
+    margin: 0;
+}
+
+.footer__text {
+    grid-area: footer__text;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__text p {
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.footer__nav {
+    grid-area: footer__nav;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__menu {
+    display: flex;
+    @include space(1rem, 0.5rem);
+    margin: 0;
+    list-style: none;
+}
+
+/** modifiers */
+
+    /** main */
+
+        /** all */
+
+.tarjeta--size {
+    grid-column: 1 / -1;
+    background-image: none;
+}
+
+        /** staking, nft */
+
+.tarjeta--mini {
+    grid-template-rows: auto auto;
+    grid-template-areas: "tarjeta__title"
+                         "tarjeta__text";
+    background-image: none;
+}
+
+        /** security */
+
+.tarjeta-security--title {
+    grid-template-areas: "tarjeta__title-h1"
+                         "tarjeta__p";
+    background-image: none;
+}
+
+/** media */
+
+@media only screen and (min-width: 768px) {
+    .header {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "logo nav";
+        @include space(1rem, 1.2rem);
+    }
+
+    .main {
+        width: 80%;
+    }
+
+    .tarjeta {
+        grid-template-areas: "tarjeta__title tarjeta__img"
+                             "tarjeta__text tarjeta__img";
+    }
+
+    .tarjeta-security {
+        grid-template-areas: "tarjeta__title-h2"
+                             "tarjeta__p";
+    }
+
+    .main--security {
+        grid-template-columns: auto auto;
+    }
+
+    .tarjeta-security--title {
+        grid-column: 1 / -1;
+        grid-template-areas: "tarjeta__title-h1 tarjeta__title-h1"
+                             " tarjeta__p tarjeta__p";
+    }
+
+    .tarjeta--size {
+        grid-template-areas: "tarjeta__title"
+                             "tarjeta__img"
+                             "tarjeta__text";
+    }
+
+    .tarjeta--mini {
+        grid-template-areas: "tarjeta__title"
+                             "tarjeta__text";
+    }
+
+    .tarjeta--reverse {
+        grid-template-areas: "tarjeta__img tarjeta__title"
+                             "tarjeta__img tarjeta__text";
+    }
+
+    .footer {
+        grid-template-rows: 1fr auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "footer__logo footer__title"
+                             "footer__text footer__nav";
+        @include space(1rem, 1.2rem);
+    }
+}
