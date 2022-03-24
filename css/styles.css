@@ -126,6 +126,27 @@ body {
   grid-template-areas: "tarjeta__title-h2" "tarjeta__p";
 }
 
+/** modifiers */
+/** main */
+/** all */
+.tarjeta--size {
+  grid-column: 1/-1;
+  background-image: none;
+}
+
+/** staking, nft */
+.tarjeta--mini {
+  grid-template-rows: auto auto;
+  grid-template-areas: "tarjeta__title" "tarjeta__text";
+  background-image: none;
+}
+
+/** security */
+.tarjeta-security--title {
+  grid-template-areas: "tarjeta__title-h1" "tarjeta__p";
+  background-image: none;
+}
+
 /** footer styles */
 /** all */
 .footer {
@@ -186,27 +207,6 @@ body {
   padding: 0.5rem;
   margin: 0;
   list-style: none;
-}
-
-/** modifiers */
-/** main */
-/** all */
-.tarjeta--size {
-  grid-column: 1/-1;
-  background-image: none;
-}
-
-/** staking, nft */
-.tarjeta--mini {
-  grid-template-rows: auto auto;
-  grid-template-areas: "tarjeta__title" "tarjeta__text";
-  background-image: none;
-}
-
-/** security */
-.tarjeta-security--title {
-  grid-template-areas: "tarjeta__title-h1" "tarjeta__p";
-  background-image: none;
 }
 
 /** media */

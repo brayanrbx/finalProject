@@ -1,0 +1,54 @@
+@use "utils";
+
+/** header styles */
+
+    /** all */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "logo"
+                            "nav";
+    justify-content: center;
+    align-items: center;
+    @include utils.space(0.5rem, 0.5rem);
+    backdrop-filter: blur(10px) brightness(0.8);
+}
+
+.logo {
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    img {
+        min-width: 184px;
+        max-width: 60%;
+    }
+}
+
+    /** modificacion bootstrap  */
+
+.navbar-light {
+    .navbar-toggler {
+        color: utils.$primary;
+        border-color: utils.$primary;
+    }
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: utils.$primary;
+}
+
+.navbar-light {
+    .navbar-nav {
+        .nav-link {
+            color: utils.$primary;
+        }
+    }
+}

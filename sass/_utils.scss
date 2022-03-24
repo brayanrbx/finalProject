@@ -1,0 +1,6 @@
+$primary: #fff;
+
+@mixin space($gap, $padding) {
+    gap: $gap;
+    padding: $padding;
+}

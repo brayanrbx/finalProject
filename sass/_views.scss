@@ -1,0 +1,59 @@
+@use "utils";
+
+/** media */
+
+@media only screen and (min-width: 768px) {
+    .header {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "logo nav";
+        @include utils.space(1rem, 1.2rem);
+    }
+
+    .main {
+        width: 80%;
+    }
+
+    .tarjeta {
+        grid-template-areas: "tarjeta__title tarjeta__img"
+                             "tarjeta__text tarjeta__img";
+    }
+
+    .tarjeta-security {
+        grid-template-areas: "tarjeta__title-h2"
+                             "tarjeta__p";
+    }
+
+    .main--security {
+        grid-template-columns: auto auto;
+    }
+
+    .tarjeta-security--title {
+        grid-column: 1 / -1;
+        grid-template-areas: "tarjeta__title-h1 tarjeta__title-h1"
+                             " tarjeta__p tarjeta__p";
+    }
+
+    .tarjeta--size {
+        grid-template-areas: "tarjeta__title"
+                             "tarjeta__img"
+                             "tarjeta__text";
+    }
+
+    .tarjeta--mini {
+        grid-template-areas: "tarjeta__title"
+                             "tarjeta__text";
+    }
+
+    .tarjeta--reverse {
+        grid-template-areas: "tarjeta__img tarjeta__title"
+                             "tarjeta__img tarjeta__text";
+    }
+
+    .footer {
+        grid-template-rows: 1fr auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "footer__logo footer__title"
+                             "footer__text footer__nav";
+        @include utils.space(1rem, 1.2rem);
+    }
+}
