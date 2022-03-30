@@ -1,6 +1,12 @@
 $primary: #fff;
+$secondary: #574fc4;
 
 @mixin space($gap, $padding) {
     gap: $gap;
     padding: $padding;
+}
+
+@mixin logoSize($minWidth, $maxWidth) {
+    min-width: $minWidth;
+    max-width: $maxWidth;
 }

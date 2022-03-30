@@ -26,29 +26,38 @@
 }
 
 .logo {
+    a {
+        @include utils.logoSize(184px, 60%);
+    }
+}
+
+.logo {
     img {
-        min-width: 184px;
-        max-width: 60%;
+        @include utils.logoSize(100%, 60%);
     }
 }
 
     /** modificacion bootstrap  */
 
 .navbar-light {
-    .navbar-toggler {
-        color: utils.$primary;
-        border-color: utils.$primary;
-    }
-}
-
-.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
-    color: utils.$primary;
-}
-
-.navbar-light {
     .navbar-nav {
         .nav-link {
             color: utils.$primary;
+
+            &:hover,
+            &:focus {
+                color: utils.$secondary;
+            }
         }
+
+        .show > .nav-link,
+        .nav-link.active {
+            color: utils.$primary;
+        }
+    }
+
+    .navbar-toggler {
+        color: utils.$primary;
+        border-color: utils.$primary;
     }
 }
