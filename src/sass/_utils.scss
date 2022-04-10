@@ -1,5 +1,10 @@
 $primary: #fff;
 $secondary: #574fc4;
+$redes: (
+    "face": #0d6efd,
+    "insta": #dc3545,
+    "twit": #03A9F4
+);
 
 @mixin space($gap, $padding) {
     gap: $gap;

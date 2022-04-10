@@ -69,3 +69,15 @@
     margin: 0;
     list-style: none;
 }
+
+.face:hover {
+    fill: map-get(utils.$redes, "face");
+}
+
+.insta:hover {
+    fill: map-get(utils.$redes, "insta");
+}
+
+.twit:hover {
+    fill: map-get(utils.$redes, "twit");
+}

@@ -216,6 +216,18 @@ body {
   list-style: none;
 }
 
+.face:hover {
+  fill: #0d6efd;
+}
+
+.insta:hover {
+  fill: #dc3545;
+}
+
+.twit:hover {
+  fill: #03A9F4;
+}
+
 .contain {
   display: flex;
   flex-flow: column wrap;
