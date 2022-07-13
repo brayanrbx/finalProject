@@ -1,0 +1,38 @@
+@use "utils";
+
+.contain {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 100vh;
+    text-align: center;
+    color: utils.$primary;
+    gap: 0.5rem;
+}
+
+.contain {
+    img {
+        width: 70%;
+    }
+    h1 {
+        padding: 0.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+.button {
+    width: 10rem;
+    height: 3rem;
+    background-color: utils.$secondary;
+    font-size: 1rem;
+    border-radius: 1rem;
+    border: none;
+    a {
+        text-decoration: none;
+        color: utils.$primary;
+    }
+}

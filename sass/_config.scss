@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to right top, #121212, #1c1c1d, #262627, #313032, #3c3a3d, #3e3c3f, #403d41, #423f43, #3b383d, #353136, #2e2b30, #28242a);
+}
+
+.contenedor {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+    gap: 1rem;
+    min-height: 100vh;
+}
